@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    {# <img src="../../../assets/img/logo.jpg" alt="" width="35" height="35" class="font-weight-bold d-inline-block align-text-top"> #}
+    <i class="fa-solid fa-car"></i>
+    Location de voiture
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="{{ path('app_home')}}"> <i class="fa-solid fa-house">Home</i>   <span class="sr-only">(current)</span></a>
+
+
+      {# donne moi l'user, je test si une personne est authentifiée #}
+      {# si user co, j'affiche le btn logout
+       on rentre dans le bloc if si personne dans le bloc else #}
+      {% if app.user %}
+        <a class="nav-item nav-link" href="{{ path('app_logout')}} "></i> 
+          <button type="button" class="btn btn-dark">Logout</button>
+         </a>    
+      {% else %}
+      {# sinon j'affiche j'affiche les btn inscription et login #}
+        <a class="nav-item nav-link" href="{{ path('app_login')}} ">  <i class="fa-solid fa-user">Login</i> </a>
+        <a class="nav-item nav-link" href="{{ path('app_register')}} "></i> Register </a>
+
+      {% endif %}
+  
+    </div>
+  </div>
+</nav>
